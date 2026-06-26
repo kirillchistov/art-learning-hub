@@ -112,12 +112,36 @@ git push -u origin main
 ### Шаг 2. Подключить Vercel к GitHub
 
 1. Откройте [Vercel Dashboard](https://vercel.com/points-5fedac28/art-learning-hub)
-2. **Settings → Git** → Connect Git Repository
-3. Выберите созданный репозиторий `art-learning-hub`
-4. Framework Preset: **Next.js** (определится автоматически)
-5. Root Directory: `./`
-6. Build Command: `next build` (по умолчанию)
-7. Output Directory: `.next` (по умолчанию)
+2. **Settings → Git** → Connect Git Repository → `kirillchistov/art-learning-hub`
+3. **Settings → General → Build & Development Settings** — проверьте:
+
+| Параметр | Значение |
+|----------|----------|
+| Framework Preset | **Next.js** |
+| Root Directory | `./` (пусто) |
+| Build Command | `npm run build` |
+| Output Directory | **пусто** (не `public`, не `.next`) |
+| Install Command | `npm install` |
+
+> В репозитории есть `vercel.json` — он подсказывает Vercel использовать Next.js. Если проект создан раньше как статический сайт, **Output Directory** мог быть `public` — это ломает сборку.
+
+4. **Settings → Environment Variables** — добавьте `AUTH_SECRET` и `AUTH_USERS` (Production + Preview)
+
+### Если сборка падает с «No Output Directory named public»
+
+Проект настроен как статический сайт вместо Next.js:
+
+1. Vercel → **Settings → General → Build & Development Settings**
+2. Framework Preset → **Next.js**
+3. Output Directory → **очистите поле полностью** (Override → снять галочку или удалить `public`)
+4. **Redeploy** последнего деплоя
+
+### GitHub Pages — не используется
+
+Этот проект — **Next.js с серверной авторизацией** (middleware + API routes). GitHub Pages отдаёт только статические HTML-файлы и **не поддерживает** такой стек.
+
+- **Settings → Pages** на GitHub → Source: **None** (отключить)
+- Деплой только через **Vercel**
 
 ### Шаг 3. Environment Variables в Vercel
 
