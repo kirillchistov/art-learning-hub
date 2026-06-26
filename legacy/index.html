@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Art Learning Hub — Современное искусство</title>
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --surface-2: #faf9f5;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #c2410c;
+    --accent-soft: #fde8d3;
+    --border: #e5e3dc;
+    --chip-bg: #f1efe8;
+    --chip-hover: #e8e5db;
+    --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+    --radius: 10px;
+  }
+  [data-theme="dark"] {
+    --bg: #15161a;
+    --surface: #1e2026;
+    --surface-2: #23252c;
+    --text: #ececec;
+    --muted: #9a9a9a;
+    --accent: #f97316;
+    --accent-soft: #3a2418;
+    --border: #2c2e36;
+    --chip-bg: #2a2c34;
+    --chip-hover: #34363f;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: saturate(140%) blur(8px);
+  }
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .brand-name { font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+  .brand-sub { font-size: 12px; color: var(--muted); }
+  .nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-links a, .theme-btn {
+    padding: 7px 12px;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .nav-links a:hover, .theme-btn:hover {
+    background: var(--surface-2);
+    border-color: var(--border);
+    text-decoration: none;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 24px 56px;
+  }
+
+  .hero {
+    padding: 28px 0 18px;
+  }
+  .hero h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .hero p {
+    margin: 0;
+    color: var(--muted);
+    max-width: 720px;
+  }
+
+  .search-wrap {
+    margin: 22px 0 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .search-wrap input {
+    flex: 1;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+  }
+  .search-wrap input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 30px 0 12px;
+    font-weight: 600;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+  }
+
+  .lesson-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+  .lesson-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 11px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .lesson-title {
+    margin: 4px 0 8px;
+    font-size: 17px;
+    line-height: 1.3;
+  }
+  .lesson-summary {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chip {
+    display: inline-block;
+    padding: 5px 11px;
+    background: var(--chip-bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+  .chip:hover {
+    background: var(--chip-hover);
+    text-decoration: none;
+  }
+
+  .twocol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 760px) {
+    .twocol { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 26px; }
+  }
+
+  .quiz-q { margin: 14px 0; }
+  .quiz-q p { margin: 0 0 8px; font-weight: 500; }
+  .quiz-q label {
+    display: block;
+    padding: 8px 12px;
+    margin: 4px 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    background: var(--surface-2);
+  }
+  .quiz-q label:hover { border-color: var(--accent); }
+  .quiz-q input { margin-right: 8px; }
+  .quiz-btn {
+    margin-top: 8px;
+    padding: 9px 18px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  .quiz-btn:hover { filter: brightness(0.95); }
+  .quiz-result {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 500;
+    display: none;
+  }
+
+  ul.refs { margin: 0; padding-left: 18px; }
+  ul.refs li { margin: 4px 0; font-size: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="nav">
+    <div class="brand">
+      <span class="brand-name">Art Learning Hub</span>
+      <span class="brand-sub">Современное искусство · 12 уроков</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#lessons">Уроки</a>
+      <a href="#exam">Тест</a>
+      <a href="#homework">ДЗ</a>
+      <a href="#library">Библиотека</a>
+      <button class="theme-btn" id="themeToggle" type="button" aria-label="Переключить тему">Тема</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Современное искусство — интерактивный путеводитель</h1>
+    <p>12 уроков от русского авангарда до contemporary art. Каждая карточка содержит лекцию, конспект, презентацию, вебинары, mindmap, домашнее задание и разбор.</p>
+  </section>
+
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="Поиск по урокам: например, поп-арт, перформанс, минимализм..." />
+  </div>
+
+  <h2 class="section-title" id="lessons">Уроки</h2>
+  <section class="grid" id="lessonGrid">
+      <article class="card lesson" data-search="урок 1 введение русский авангард дадаизм modern contemporary">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 1</span>
+          <div class="tags"><span class="tag">авангард</span> <span class="tag">дадаизм</span></div>
+        </div>
+        <h3 class="lesson-title">Введение. Русский авангард и дадаизм</h3>
+        <p class="lesson-summary">Различие modern и contemporary art, истоки русского авангарда, ключевые направления и техники дада.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217081&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/18eHjuxdcVmWYkWqsemx-dQp9o5jtFkqV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/18U9cn48cK0oiU2iEUj_ZzGn3mxZ0Bc4b/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://rutube.ru/video/private/3c774a8e30586adebe336e19c9069cce/?p=qzQYuyobejXrcOyMFMlu4A" target="_blank" rel="noopener noreferrer">Веб</a>
+          <a class="chip" href="https://drive.google.com/file/d/1fmtUMNnV1WE_XJKobH6lgR8tHjK18-WI/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Abcaz92W__4qCd6BCeTEv7BQIwEA6THR/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1riufekMK1G1suy9DZEDG6gNvCPejJbwz/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1hPBcFs3Op03ljr5ZtOsjS2Ck1TETp2TM/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1ssJeRShAQmUbrqQPlngvvM5hJfc5urx1/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1upVavAOh-TKs8zBgA_6_ApJ8nHOZg6bu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1h6P2b-jLGw8wU8I3puLTA6lqcHXKrRTU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1TzB4Hqahd775lWORLDcQyrs5QMgnEZ4g/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://docs.google.com/presentation/d/1mNYOUwGLe4prz7K9AsnXqMnvS9OBHySb/edit?usp=sharing&amp;ouid=110461931781454674603&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 2 сюрреализм автоматизм">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 2</span>
+          <div class="tags"><span class="tag">сюрреализм</span> <span class="tag">бессознательное</span></div>
+        </div>
+        <h3 class="lesson-title">Сюрреализм</h3>
+        <p class="lesson-summary">Автоматизм, сон, психоанализ, поэтика странного и логика сюрреалистического изображения.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217082&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1q13ha3mzIg_hWDzywOQaarv_-LAZ_2As/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1qh_gnmAjrNZoVxxQm-ej6moSiSzHsbxN/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1lPA879y5EEWc8Pix5OYQJ0Riei7oIl8G/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Kqn3_GOmVPvBCapdLmtqFLRTvprscpq1/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1NmAf4fa_61iyZ5NKAtjNxYU1M4mvspKc/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Yg2MZl6V7pC2s8ShXvnhXpVNLkWRRvkN/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1XfaEJ_RaM8x_xeP3cGFebrt3JYFSL91u/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Gz1VdT7gpVBr0fKjzyqnIPDGc5QReKQp/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://docs.google.com/presentation/d/1xn644gT9EGqz8z79s90nbgxdXaCqIwzK/edit?usp=sharing&amp;ouid=110461931781454674603&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 3 скульптура ассамбляж инсталляция">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 3</span>
+          <div class="tags"><span class="tag">скульптура</span> <span class="tag">инсталляция</span> <span class="tag">ассамбляж</span></div>
+        </div>
+        <h3 class="lesson-title">Скульптура XX века, ассамбляж и инсталляции</h3>
+        <p class="lesson-summary">Расширение понятия скульптуры: объект, сборка, пространство, среда и инсталляционный поворот.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217083" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/18ny7jH3iHU4v_IkLrdPtm0XzdW4_i9s8/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1md1WtXNxo5zt6aoe9YSZMLbje4SQhOcx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1W84aCh_-Dhro_9l0sTpfx4hE2Y06oHFK/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/19up2d7O9pZnBSx75BRJjrWcw105QmlXr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Uwm-0br_ffZdpNLDTJyBvp7-al9WszCt/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1c2sal1zuTnKIYkCUKm1MONolhGlQI3_A/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1fXOi0S-FBtdR_XOo0_U4BGg34PZSDPMC/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/170NpVmKK6cMthhoMISzk2VTgwVpodLvS/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/17de3FtK8X6MAyOQ5j_dTQQsJgqA4sP3n/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1wLr071xzCi2QjnQLrINaVyBfxAaMbZk8/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://docs.google.com/presentation/d/1bZUdiP912zPWQYh2YoJ8E-qJ6AGa6Zai/edit?slide=id.p11#slide=id.p11" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 4 абстрактный экспрессионизм неоэкспрессионизм">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 4</span>
+          <div class="tags"><span class="tag">экспрессионизм</span> <span class="tag">абстракция</span></div>
+        </div>
+        <h3 class="lesson-title">Абстрактный экспрессионизм и неоэкспрессионизм</h3>
+        <p class="lesson-summary">Послевоенная живопись, жест, цветовое поле, эмоциональная интенсивность и материал.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217084" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1p4G8JhjY9a64teZgRRuTDKwLhDXwdjLh/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1vgttIoghqFgvLdOwtQ_B1yQNivJK3R6a/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1copKYyqLruOylS9uPYT4au1soSI_WMnD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1mYx4GCRiIoA0mQ_jpUNm1-OCapPREy_J/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1phuJ2iqOYOKkFvEY0etJSrTUWCZvYv2K/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1wNb6Sa9WsBRqdCi92laXxt6TpTJipaUc/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1vWPwj-RVmFoouuQIxF4Sz_yB15dKnAxl/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1YMcLtewRMjyT8my02Stqyjx9mc745WgF/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1yShZvc8K6afWOpH8Cj69h0bd07a38sZA/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://docs.google.com/presentation/d/19Nua_HuxEj_BbNz2toSPHClZcPHZY0Gi/edit?usp=drive_link&amp;ouid=110461931781454674603&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 5 поп-арт гиперреализм массовая культура">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 5</span>
+          <div class="tags"><span class="tag">поп-арт</span> <span class="tag">гиперреализм</span></div>
+        </div>
+        <h3 class="lesson-title">Поп-арт и гиперреализм</h3>
+        <p class="lesson-summary">Массовая культура, потребление, тиражируемый образ, медиа и эффект визуальной сверхточности.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217085" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1gnCm4qBUHYALZ8TB-4treQluPCdYQbUi/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1-WUZswsqG6R5vsN1cVZ7I3-kfkFK89PD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1XhSyY51TkY8VX4VTEfZPMXLAZfgLYQuD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1mYx4GCRiIoA0mQ_jpUNm1-OCapPREy_J/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1vWOM_hUWJCrpPl9KTPPuaIeJYsb37TYu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/188T96_4N4dpk6XEQwZ_ZPnchFOgIrY-X/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1GYjIcwCgKQymoHWQDV4qis5pweRdX15T/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/10rpqh9kfzqa0ku7ZKgIzzQ-L7UJCeelB/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1YfOdnmtZ_M_m6aLqSOqHok1ZM4HtT6__/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1p6pMLk3Ay0Z13ukWeCJD2Q8F0XsEm34_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://docs.google.com/presentation/d/1hlvceI77AJ5Cq6_CzErGZDEypMI3GUUt/edit?usp=drive_link&amp;ouid=108795420798504236839&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 6 оп-арт кинетическое искусство арте-повера">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 6</span>
+          <div class="tags"><span class="tag">оп-арт</span> <span class="tag">кинетизм</span> <span class="tag">arte povera</span></div>
+        </div>
+        <h3 class="lesson-title">Оп-арт, кинетическое искусство и арте-повера</h3>
+        <p class="lesson-summary">Зрительное мерцание, движение, кинетические системы и бедные материалы как художественная стратегия.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217086" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1LjQ8u0QJURwQ014fkg7yFMUXdfHFvDBP/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1yM_w9HoewR90eUTa6ZhzfGhA_hMV17dj/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1auTAkKvDCfvSY1bT6rZEonbfiXVP2hY_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1owiWM-ZEy1WPNyV7cM_6ohg36UkpyFFW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/16-lgDrEOy2UPKszMK2WJ-uswFDOuG2Ap/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1WZSqwzwsycrL3hnihSHkYuytuYkhqBpu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/141AbsfhPyImdatTCLjyNYPbHJD9sjwW0/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/123pgTw8ipOg7XiLJIbxcjuM4Ss1-PS3z/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1p6pMLk3Ay0Z13ukWeCJD2Q8F0XsEm34_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://docs.google.com/presentation/d/1JMknqXGoLm7QGVcmJaXysQlzxUgVLm98/edit?usp=drive_link&amp;ouid=108795420798504236839&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Решение</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 7 минимализм объектность модуль">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 7</span>
+          <div class="tags"><span class="tag">минимализм</span> <span class="tag">объектность</span></div>
+        </div>
+        <h3 class="lesson-title">Минимализм</h3>
+        <p class="lesson-summary">Форма, повтор, модуль, масштаб и буквальное присутствие объекта в пространстве.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217087&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/101tgRUx79wZAykeMpDeS5ZR-AaNmEPRE/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1P2B0X1q1bzv848vhRqUgm0pp_zDMuiaO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1e2cwRLcptuMD1jaeaOPLxvp-em6mZPVm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Lfuu-6C_PEjpvhqYaeqCK-P3a6mBsacz/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1UnWdclDJ3pHeOPO3ML-NTD-AOPFdEanW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1iUj3VtMGwvF8lbBi2U0xfqTeekRd2obQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1eMOV7-bEcmwMfcL6SrvQGov9BSyHYil9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap</a>
+          <a class="chip" href="https://drive.google.com/file/d/1MMsuSGtmsD1gyqtNXp0_-MvUILOwtN7d/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://drive.google.com/file/d/1KaPFcuXllKnjKfKJm-5e7qGm7ORTlQHf/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 8 концептуализм идея инструкция">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 8</span>
+          <div class="tags"><span class="tag">концептуализм</span> <span class="tag">идея</span></div>
+        </div>
+        <h3 class="lesson-title">Концептуализм</h3>
+        <p class="lesson-summary">Приоритет идеи, инструкции, текста и системы над визуальной формой произведения.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217088&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1k_e3KJJUYwV4n3VKCM89Jd1Gw92qKiUC/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1HcKwmcs4KO3aAMGIZf6Ej9aLr687x6RW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/18d07A8INh5dNR4ZwTwnIyt9_M-itN4D9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1K1-uhuE8xB80irJ06OJ_3-EKF1L1NwQk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1iklBqcSNm9rMwyrG9ambUH-bPQvYM5xh/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1XbgfV4h5R8wUitYPwSMQDsy49YJKHppn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1k2bXL_0imdURt7K9hDBLaIJ5-1xOCTmN/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1NpmH3MuAJQJ_hz91yiy1U8n88aO2UfBv/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1E27uAL8A3fk-htjTVu8zJFwk49GMKnOU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://drive.google.com/file/d/1kAdczdLIewbJbHa55QZ6Q7I0GigwqCjD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 9 перформанс хеппенинг телесность">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 9</span>
+          <div class="tags"><span class="tag">перформанс</span> <span class="tag">хеппенинг</span></div>
+        </div>
+        <h3 class="lesson-title">Перформанс</h3>
+        <p class="lesson-summary">Действие, телесность, присутствие зрителя, документация и границы между искусством и жизнью.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217089&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1741LCwy5xPzJGKZguyHjLEHdTux8g6pG/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1aRauejbdE7UFKUpw4aMQKy3zjvm_6ACk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1BSuZKwrtL-927VbPEiANXAtaM75z1J0M/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1dR6gd0Vibk5-czom8ONtya5fHh25J60v/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1a7vkBtfY8rTWvBQ2S_hGxQF3i-3qvjHG/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1wiYiKs64nW0GKQ-U8wAsVK0MOI5j7_MP/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1AdCDT5iHDvXm4Si9JOhbNQtzn7hgW_k-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1UaGxIwhXA3nG0yDRfIe_l0IZsVlpHQB3/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1U4Zp4jt_eyNuK-BSrX6sxVDe86O28gtE/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1eArRfz4EgiyRSic6hUpUST12GJL4PMt9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 4</a>
+          <a class="chip" href="https://drive.google.com/file/d/1KjFxCuzTa1OuMppgrA56q8zuQv6AH-4r/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://drive.google.com/file/d/1lig4_8zlo1j2d16kNDq4zrlDlouboMv6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 10 contemporary art постмодернизм новые медиа">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 10</span>
+          <div class="tags"><span class="tag">contemporary art</span> <span class="tag">постмодернизм</span></div>
+        </div>
+        <h3 class="lesson-title">Contemporary art (1)</h3>
+        <p class="lesson-summary">Постмодернизм, цифровое искусство, новые медиа и расширение понятий современного искусства.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217090&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1yT7wUKRHlbMo9u6CMHzZeJNNcfG5SNdN/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1-95xQ5rKQdQR4FXqozN8XiAO_o-j-imV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1bnCxwOnTS-vgttp7iUHSZw-VF8bLm3ys/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1j6zzPB0zsd8nqj7qqQMPBQwvlFjlm22z/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1L3tY1CK40lijJjpneDMCm9QaGhWYPxGc/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1GZxoPEI0RNnafpqtJLs8kXXAmOcPGr46/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1KNeH0TfylzJcNkIJlaguQ3NtkMUOAmWD/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/16bcHQ7wAQOQZHf_iHcl7znGcSWjJd3-r/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1q-gROMjcXnN8M032FZKpl-gzD-eX_juL/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1zXmHByU3iggOk0vkwkbL1LTyQ7HKvhdu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://drive.google.com/file/d/1vl_RFtql2297iw4vE_3P2UGKCMBjHfgU/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 11 contemporary art институции рынок выставки">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 11</span>
+          <div class="tags"><span class="tag">contemporary art</span> <span class="tag">институции</span></div>
+        </div>
+        <h3 class="lesson-title">Contemporary art (2)</h3>
+        <p class="lesson-summary">Институции, выставочные механизмы, рынок и способы легитимации актуального искусства.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217091&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/1b8psae-CuU8J6Vt3QmhfB0kYkG_YEqtm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/11L-ACrZbGqaVs_Ls7M2ZLQkj6IV6tMYi/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/1a79VanDMpGidQbvgdRYcfGDZNg1eYQG_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1EuSqINmEOzuHU0TKFse6JfOE04qSHt0U/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1bBCXvpkPWT1K4wSTIP5LegvseEVdQ1uT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1qg7ABHfCntjVt5eXBdI0gRqVfHaa-4DJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1rRiLtTv6-WrXtG3nyfCz-JR5p5F2UUQ9/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1er7WIRZwp4BO_WMxsXZs9EjXBaSBf26A/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1tPkFaGxtVInc_biz7bmSxUPokCMRgECP/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1sIT30VDnnBcvg4PlZ2UhDefC7JZzmijK/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://drive.google.com/file/d/1o9d4YQjTjz0hhMBj2mVanfN9dmZ3anQ_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+      <article class="card lesson" data-search="урок 12 искусство вне музея public art land art architecture">
+        <div class="lesson-head">
+          <span class="lesson-num">Урок 12</span>
+          <div class="tags"><span class="tag">public art</span> <span class="tag">лэнд-арт</span></div>
+        </div>
+        <h3 class="lesson-title">Искусство вне музея</h3>
+        <p class="lesson-summary">Искусство в ландшафте, городской среде и архитектуре; выход из музейного пространства.</p>
+        <div class="chips">
+          <a class="chip" href="https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217092&amp;editMode=0" target="_blank" rel="noopener noreferrer">Лекция</a>
+          <a class="chip" href="https://drive.google.com/file/d/10JaqX_Sdg8xkWXkDFRw-YjlPasrZovAd/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Презентация</a>
+          <a class="chip" href="https://drive.google.com/file/d/1mT2iLkkkj7DkWOcnI0rjcJI3DOaflMVr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Конспект</a>
+          <a class="chip" href="https://drive.google.com/file/d/16579bMDBzpgTFpr06TW-erbg9OrrcjjT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1dM3nI4Ivj8j8SOq74byyScSq79pD45C7/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1s-liwQB2qvRUuyaHDy91Gscbknnex9A0/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1QtioRnHtOaZmJRm8d6YH_EmVZyau96TE/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Веб-конспект 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1Wovl-fZT92Do_xI7pfKRKm6X3aLoCH9i/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 1</a>
+          <a class="chip" href="https://drive.google.com/file/d/1sCkIQ3iWmqaADzbZfSldxR8SJOB7PJit/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 2</a>
+          <a class="chip" href="https://drive.google.com/file/d/1HXaUIiBItExDs6C7BsT-4lZol3TT7Pns/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 3</a>
+          <a class="chip" href="https://drive.google.com/file/d/1A_rKaPercDhzsQjZNyLuQENnwWgZ1eck/view?usp=drive_link" target="_blank" rel="noopener noreferrer">MindMap 4</a>
+          <a class="chip" href="https://drive.google.com/file/d/1mnb9hXWbuSYP4toSGcAoScbDPrCR9Xdm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">ДЗ</a>
+          <a class="chip" href="https://drive.google.com/file/d/1wIV1zI4aTmdOSpTm2Q_B3jQP7GN6RhHm/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Решение 🌟</a>
+        </div>
+      </article>
+  </section>
+
+  <h2 class="section-title" id="exam">Мини-тест по курсу</h2>
+  <section class="card">
+    <div class="quiz-q">
+      <p>1. Кто считается основоположником сюрреализма?</p>
+      <label><input type="radio" name="q1" value="a" /> Казимир Малевич</label>
+      <label><input type="radio" name="q1" value="b" /> Андре Бретон</label>
+      <label><input type="radio" name="q1" value="c" /> Энди Уорхол</label>
+    </div>
+    <div class="quiz-q">
+      <p>2. Какое направление связано с супрематизмом и «Чёрным квадратом»?</p>
+      <label><input type="radio" name="q2" value="a" /> Дадаизм</label>
+      <label><input type="radio" name="q2" value="b" /> Поп-арт</label>
+      <label><input type="radio" name="q2" value="c" /> Русский авангард</label>
+    </div>
+    <div class="quiz-q">
+      <p>3. Кто автор работ «Campbell's Soup Cans» и портретов Мэрилин Монро?</p>
+      <label><input type="radio" name="q3" value="a" /> Рой Лихтенштейн</label>
+      <label><input type="radio" name="q3" value="b" /> Энди Уорхол</label>
+      <label><input type="radio" name="q3" value="c" /> Джексон Поллок</label>
+    </div>
+    <div class="quiz-q">
+      <p>4. Что характерно для минимализма?</p>
+      <label><input type="radio" name="q4" value="a" /> Сведение формы к простым геометрическим элементам</label>
+      <label><input type="radio" name="q4" value="b" /> Подробная фигуративность</label>
+      <label><input type="radio" name="q4" value="c" /> Иллюстративный нарратив</label>
+    </div>
+    <div class="quiz-q">
+      <p>5. Перформанс как направление — это прежде всего:</p>
+      <label><input type="radio" name="q5" value="a" /> Живопись маслом</label>
+      <label><input type="radio" name="q5" value="b" /> Действие/событие как произведение</label>
+      <label><input type="radio" name="q5" value="c" /> Книжная графика</label>
+    </div>
+    <button class="quiz-btn" id="quizSubmit" type="button">Проверить</button>
+    <div class="quiz-result" id="quizResult"></div>
+  </section>
+
+  <h2 class="section-title" id="homework">Сводка по домашним заданиям</h2>
+  <section class="card">
+    <p style="margin:0 0 8px;color:var(--muted);font-size:14px;">К каждому уроку прилагается домашнее задание и его авторский разбор. Перейти к материалам можно прямо из карточек уроков.</p>
+    <div class="chips">
+      <a class="chip" href="#lessons">Все уроки и ДЗ</a>
+    </div>
+  </section>
+
+  <h2 class="section-title" id="library">Библиотека и дополнительные ресурсы</h2>
+  <section class="twocol">
+    <div class="card">
+      <h3 style="margin-top:0;">Курс целиком</h3>
+      <ul class="refs">
+        <li><a href="https://drive.google.com/drive/u/0/folders/1PMhyPxjRCs91r1LtXSbUpDUWJzJlIYlP" target="_blank" rel="noopener noreferrer">Папка со всеми материалами курса</a></li>
+        <li><a href="https://docs.google.com/document/d/1hJYk885EQRSLtqqciMclfbc6JeIQuptZ/edit" target="_blank" rel="noopener noreferrer">Документ «Полезные ссылки»</a></li>
+        <li><a href="https://base.oppopart-lessons.ru/" target="_blank" rel="noopener noreferrer">Платформа лекций Op-Pop-Art</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Рекомендуемое чтение</h3>
+      <ul class="refs">
+        <li>Розалинд Краусс — «Подлинность авангарда и другие модернистские мифы»</li>
+        <li>Борис Гройс — «Политика поэтики», «Искусство утопии»</li>
+        <li>Хэл Фостер — «Возвращение реального»</li>
+        <li>Артур Данто — «После конца искусства»</li>
+        <li>Клер Бишоп — «Искусственный ад: партиципаторное искусство»</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>© Art Learning Hub · Курс по современному искусству</footer>
+</main>
+
+<script>
+  // Тема
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('alh-theme');
+  if (savedTheme) root.setAttribute('data-theme', savedTheme);
+  themeToggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('alh-theme', next);
+  });
+
+  // Поиск
+  const search = document.getElementById('search');
+  const cards = document.querySelectorAll('#lessonGrid .lesson');
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    cards.forEach(c => {
+      const hay = (c.dataset.search + ' ' + c.textContent).toLowerCase();
+      c.classList.toggle('hidden', q && !hay.includes(q));
+    });
+  });
+
+  // Тест
+  const correct = { q1: 'b', q2: 'c', q3: 'b', q4: 'a', q5: 'b' };
+  document.getElementById('quizSubmit').addEventListener('click', () => {
+    let score = 0;
+    const total = Object.keys(correct).length;
+    for (const k of Object.keys(correct)) {
+      const sel = document.querySelector(`input[name="${k}"]:checked`);
+      if (sel && sel.value === correct[k]) score++;
+    }
+    const r = document.getElementById('quizResult');
+    r.style.display = 'block';
+    r.textContent = `Результат: ${score} из ${total}`;
+  });
+</script>
+</body>
+</html>

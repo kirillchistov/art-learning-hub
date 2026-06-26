@@ -1,0 +1,36 @@
+{
+  "slug": "izi",
+  "title": "История зарубежного искусства",
+  "shortTitle": "ИЗИ",
+  "description": "Курс по истории зарубежного искусства — от античности до XIX века. Материалы будут добавляться по мере подготовки.",
+  "heroTitle": "История зарубежного искусства — интерактивный путеводитель",
+  "status": "active",
+  "accent": "#1d4ed8",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "Введение в историю зарубежного искусства",
+      "summary": "Методология, хронологические рамки, основные периоды и способы работы с первоисточниками.",
+      "tags": ["введение", "методология"],
+      "searchKeywords": "урок 1 введение история зарубежного искусства методология",
+      "resources": [
+        {
+          "label": "Папка материалов (Google Drive)",
+          "href": "https://drive.google.com/drive/folders/1VZPK9LAKMbxoHo1jLTEnlWcbZ1HXvNfr"
+        }
+      ]
+    }
+  ],
+  "library": [
+    {
+      "title": "Материалы курса",
+      "items": [
+        {
+          "label": "Папка ИЗИ на Google Drive",
+          "href": "https://drive.google.com/drive/folders/1VZPK9LAKMbxoHo1jLTEnlWcbZ1HXvNfr"
+        }
+      ]
+    }
+  ],
+  "quiz": []
+}

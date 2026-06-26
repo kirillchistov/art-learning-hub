@@ -1,0 +1,992 @@
+{
+  "slug": "modern-art",
+  "title": "Современное искусство",
+  "shortTitle": "Современное искусство",
+  "description": "12 уроков от русского авангарда до contemporary art. Каждая карточка содержит лекцию, конспект, презентацию, вебинары, mindmap, домашнее задание и разбор.",
+  "heroTitle": "Современное искусство — интерактивный путеводитель",
+  "status": "active",
+  "library": [
+    {
+      "title": "Курс целиком",
+      "items": [
+        {
+          "label": "Папка со всеми материалами курса",
+          "href": "https://drive.google.com/drive/u/0/folders/1PMhyPxjRCs91r1LtXSbUpDUWJzJlIYlP"
+        },
+        {
+          "label": "Документ «Полезные ссылки»",
+          "href": "https://docs.google.com/document/d/1hJYk885EQRSLtqqciMclfbc6JeIQuptZ/edit"
+        },
+        {
+          "label": "Платформа лекций Op-Pop-Art",
+          "href": "https://base.oppopart-lessons.ru/"
+        }
+      ]
+    },
+    {
+      "title": "Рекомендуемое чтение",
+      "items": [
+        {
+          "label": "Розалинд Краусс — «Подлинность авангарда и другие модернистские мифы»"
+        },
+        {
+          "label": "Борис Гройс — «Политика поэтики», «Искусство утопии»"
+        },
+        {
+          "label": "Хэл Фостер — «Возвращение реального»"
+        },
+        {
+          "label": "Артур Данто — «После конца искусства»"
+        },
+        {
+          "label": "Клер Бишоп — «Искусственный ад: партиципаторное искусство»"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Кто считается основоположником сюрреализма?",
+      "options": [
+        {
+          "value": "a",
+          "label": "Казимир Малевич"
+        },
+        {
+          "value": "b",
+          "label": "Андре Бретон"
+        },
+        {
+          "value": "c",
+          "label": "Энди Уорхол"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q2",
+      "question": "Какое направление связано с супрематизмом и «Чёрным квадратом»?",
+      "options": [
+        {
+          "value": "a",
+          "label": "Дадаизм"
+        },
+        {
+          "value": "b",
+          "label": "Поп-арт"
+        },
+        {
+          "value": "c",
+          "label": "Русский авангард"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": "q3",
+      "question": "Кто автор работ «Campbell's Soup Cans» и портретов Мэрилин Монро?",
+      "options": [
+        {
+          "value": "a",
+          "label": "Рой Лихтенштейн"
+        },
+        {
+          "value": "b",
+          "label": "Энди Уорхол"
+        },
+        {
+          "value": "c",
+          "label": "Джексон Поллок"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": "q4",
+      "question": "Что характерно для минимализма?",
+      "options": [
+        {
+          "value": "a",
+          "label": "Сведение формы к простым геометрическим элементам"
+        },
+        {
+          "value": "b",
+          "label": "Подробная фигуративность"
+        },
+        {
+          "value": "c",
+          "label": "Иллюстративный нарратив"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": "q5",
+      "question": "Перформанс как направление — это прежде всего:",
+      "options": [
+        {
+          "value": "a",
+          "label": "Живопись маслом"
+        },
+        {
+          "value": "b",
+          "label": "Действие/событие как произведение"
+        },
+        {
+          "value": "c",
+          "label": "Книжная графика"
+        }
+      ],
+      "correct": "b"
+    }
+  ],
+  "lessons": [
+    {
+      "number": 1,
+      "title": "Введение. Русский авангард и дадаизм",
+      "summary": "Различие modern и contemporary art, истоки русского авангарда, ключевые направления и техники дада.",
+      "tags": [
+        "авангард",
+        "дадаизм"
+      ],
+      "searchKeywords": "урок 1 введение русский авангард дадаизм modern contemporary",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217081&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/18eHjuxdcVmWYkWqsemx-dQp9o5jtFkqV/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/18U9cn48cK0oiU2iEUj_ZzGn3mxZ0Bc4b/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб",
+          "href": "https://rutube.ru/video/private/3c774a8e30586adebe336e19c9069cce/?p=qzQYuyobejXrcOyMFMlu4A",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1fmtUMNnV1WE_XJKobH6lgR8tHjK18-WI/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1Abcaz92W__4qCd6BCeTEv7BQIwEA6THR/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 3",
+          "href": "https://drive.google.com/file/d/1riufekMK1G1suy9DZEDG6gNvCPejJbwz/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1hPBcFs3Op03ljr5ZtOsjS2Ck1TETp2TM/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1ssJeRShAQmUbrqQPlngvvM5hJfc5urx1/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1upVavAOh-TKs8zBgA_6_ApJ8nHOZg6bu/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/1h6P2b-jLGw8wU8I3puLTA6lqcHXKrRTU/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1TzB4Hqahd775lWORLDcQyrs5QMgnEZ4g/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://docs.google.com/presentation/d/1mNYOUwGLe4prz7K9AsnXqMnvS9OBHySb/edit?usp=sharing&ouid=110461931781454674603&rtpof=true&sd=true",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Сюрреализм",
+      "summary": "Автоматизм, сон, психоанализ, поэтика странного и логика сюрреалистического изображения.",
+      "tags": [
+        "сюрреализм",
+        "бессознательное"
+      ],
+      "searchKeywords": "урок 2 сюрреализм автоматизм",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217082&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1q13ha3mzIg_hWDzywOQaarv_-LAZ_2As/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1qh_gnmAjrNZoVxxQm-ej6moSiSzHsbxN/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1lPA879y5EEWc8Pix5OYQJ0Riei7oIl8G/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1Kqn3_GOmVPvBCapdLmtqFLRTvprscpq1/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1NmAf4fa_61iyZ5NKAtjNxYU1M4mvspKc/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1Yg2MZl6V7pC2s8ShXvnhXpVNLkWRRvkN/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1XfaEJ_RaM8x_xeP3cGFebrt3JYFSL91u/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1Gz1VdT7gpVBr0fKjzyqnIPDGc5QReKQp/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://docs.google.com/presentation/d/1xn644gT9EGqz8z79s90nbgxdXaCqIwzK/edit?usp=sharing&ouid=110461931781454674603&rtpof=true&sd=true",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Скульптура XX века, ассамбляж и инсталляции",
+      "summary": "Расширение понятия скульптуры: объект, сборка, пространство, среда и инсталляционный поворот.",
+      "tags": [
+        "скульптура",
+        "инсталляция",
+        "ассамбляж"
+      ],
+      "searchKeywords": "урок 3 скульптура ассамбляж инсталляция",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217083",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/18ny7jH3iHU4v_IkLrdPtm0XzdW4_i9s8/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1md1WtXNxo5zt6aoe9YSZMLbje4SQhOcx/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1W84aCh_-Dhro_9l0sTpfx4hE2Y06oHFK/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/19up2d7O9pZnBSx75BRJjrWcw105QmlXr/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 3",
+          "href": "https://drive.google.com/file/d/1Uwm-0br_ffZdpNLDTJyBvp7-al9WszCt/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1c2sal1zuTnKIYkCUKm1MONolhGlQI3_A/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1fXOi0S-FBtdR_XOo0_U4BGg34PZSDPMC/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/170NpVmKK6cMthhoMISzk2VTgwVpodLvS/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/17de3FtK8X6MAyOQ5j_dTQQsJgqA4sP3n/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1wLr071xzCi2QjnQLrINaVyBfxAaMbZk8/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://docs.google.com/presentation/d/1bZUdiP912zPWQYh2YoJ8E-qJ6AGa6Zai/edit?slide=id.p11#slide=id.p11",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Абстрактный экспрессионизм и неоэкспрессионизм",
+      "summary": "Послевоенная живопись, жест, цветовое поле, эмоциональная интенсивность и материал.",
+      "tags": [
+        "экспрессионизм",
+        "абстракция"
+      ],
+      "searchKeywords": "урок 4 абстрактный экспрессионизм неоэкспрессионизм",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217084",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1p4G8JhjY9a64teZgRRuTDKwLhDXwdjLh/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1vgttIoghqFgvLdOwtQ_B1yQNivJK3R6a/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1copKYyqLruOylS9uPYT4au1soSI_WMnD/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1mYx4GCRiIoA0mQ_jpUNm1-OCapPREy_J/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1phuJ2iqOYOKkFvEY0etJSrTUWCZvYv2K/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1wNb6Sa9WsBRqdCi92laXxt6TpTJipaUc/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1vWPwj-RVmFoouuQIxF4Sz_yB15dKnAxl/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/1YMcLtewRMjyT8my02Stqyjx9mc745WgF/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1yShZvc8K6afWOpH8Cj69h0bd07a38sZA/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://docs.google.com/presentation/d/19Nua_HuxEj_BbNz2toSPHClZcPHZY0Gi/edit?usp=drive_link&ouid=110461931781454674603&rtpof=true&sd=true",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Поп-арт и гиперреализм",
+      "summary": "Массовая культура, потребление, тиражируемый образ, медиа и эффект визуальной сверхточности.",
+      "tags": [
+        "поп-арт",
+        "гиперреализм"
+      ],
+      "searchKeywords": "урок 5 поп-арт гиперреализм массовая культура",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217085",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1gnCm4qBUHYALZ8TB-4treQluPCdYQbUi/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1-WUZswsqG6R5vsN1cVZ7I3-kfkFK89PD/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1XhSyY51TkY8VX4VTEfZPMXLAZfgLYQuD/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1mYx4GCRiIoA0mQ_jpUNm1-OCapPREy_J/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1vWOM_hUWJCrpPl9KTPPuaIeJYsb37TYu/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/188T96_4N4dpk6XEQwZ_ZPnchFOgIrY-X/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1GYjIcwCgKQymoHWQDV4qis5pweRdX15T/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/10rpqh9kfzqa0ku7ZKgIzzQ-L7UJCeelB/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 3",
+          "href": "https://drive.google.com/file/d/1YfOdnmtZ_M_m6aLqSOqHok1ZM4HtT6__/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1p6pMLk3Ay0Z13ukWeCJD2Q8F0XsEm34_/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://docs.google.com/presentation/d/1hlvceI77AJ5Cq6_CzErGZDEypMI3GUUt/edit?usp=drive_link&ouid=108795420798504236839&rtpof=true&sd=true",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Оп-арт, кинетическое искусство и арте-повера",
+      "summary": "Зрительное мерцание, движение, кинетические системы и бедные материалы как художественная стратегия.",
+      "tags": [
+        "оп-арт",
+        "кинетизм",
+        "arte povera"
+      ],
+      "searchKeywords": "урок 6 оп-арт кинетическое искусство арте-повера",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217086",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1LjQ8u0QJURwQ014fkg7yFMUXdfHFvDBP/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1yM_w9HoewR90eUTa6ZhzfGhA_hMV17dj/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1auTAkKvDCfvSY1bT6rZEonbfiXVP2hY_/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1owiWM-ZEy1WPNyV7cM_6ohg36UkpyFFW/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/16-lgDrEOy2UPKszMK2WJ-uswFDOuG2Ap/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1WZSqwzwsycrL3hnihSHkYuytuYkhqBpu/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/141AbsfhPyImdatTCLjyNYPbHJD9sjwW0/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 3",
+          "href": "https://drive.google.com/file/d/123pgTw8ipOg7XiLJIbxcjuM4Ss1-PS3z/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1p6pMLk3Ay0Z13ukWeCJD2Q8F0XsEm34_/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение",
+          "href": "https://docs.google.com/presentation/d/1JMknqXGoLm7QGVcmJaXysQlzxUgVLm98/edit?usp=drive_link&ouid=108795420798504236839&rtpof=true&sd=true",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Минимализм",
+      "summary": "Форма, повтор, модуль, масштаб и буквальное присутствие объекта в пространстве.",
+      "tags": [
+        "минимализм",
+        "объектность"
+      ],
+      "searchKeywords": "урок 7 минимализм объектность модуль",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217087&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/101tgRUx79wZAykeMpDeS5ZR-AaNmEPRE/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1P2B0X1q1bzv848vhRqUgm0pp_zDMuiaO/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб",
+          "href": "https://drive.google.com/file/d/1e2cwRLcptuMD1jaeaOPLxvp-em6mZPVm/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1Lfuu-6C_PEjpvhqYaeqCK-P3a6mBsacz/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1UnWdclDJ3pHeOPO3ML-NTD-AOPFdEanW/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1iUj3VtMGwvF8lbBi2U0xfqTeekRd2obQ/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap",
+          "href": "https://drive.google.com/file/d/1eMOV7-bEcmwMfcL6SrvQGov9BSyHYil9/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1MMsuSGtmsD1gyqtNXp0_-MvUILOwtN7d/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://drive.google.com/file/d/1KaPFcuXllKnjKfKJm-5e7qGm7ORTlQHf/view?usp=drive_link",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Концептуализм",
+      "summary": "Приоритет идеи, инструкции, текста и системы над визуальной формой произведения.",
+      "tags": [
+        "концептуализм",
+        "идея"
+      ],
+      "searchKeywords": "урок 8 концептуализм идея инструкция",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217088&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1k_e3KJJUYwV4n3VKCM89Jd1Gw92qKiUC/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1HcKwmcs4KO3aAMGIZf6Ej9aLr687x6RW/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/18d07A8INh5dNR4ZwTwnIyt9_M-itN4D9/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1K1-uhuE8xB80irJ06OJ_3-EKF1L1NwQk/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1iklBqcSNm9rMwyrG9ambUH-bPQvYM5xh/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1XbgfV4h5R8wUitYPwSMQDsy49YJKHppn/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1k2bXL_0imdURt7K9hDBLaIJ5-1xOCTmN/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/1NpmH3MuAJQJ_hz91yiy1U8n88aO2UfBv/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1E27uAL8A3fk-htjTVu8zJFwk49GMKnOU/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://drive.google.com/file/d/1kAdczdLIewbJbHa55QZ6Q7I0GigwqCjD/view?usp=drive_link",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Перформанс",
+      "summary": "Действие, телесность, присутствие зрителя, документация и границы между искусством и жизнью.",
+      "tags": [
+        "перформанс",
+        "хеппенинг"
+      ],
+      "searchKeywords": "урок 9 перформанс хеппенинг телесность",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217089&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1741LCwy5xPzJGKZguyHjLEHdTux8g6pG/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1aRauejbdE7UFKUpw4aMQKy3zjvm_6ACk/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1BSuZKwrtL-927VbPEiANXAtaM75z1J0M/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1dR6gd0Vibk5-czom8ONtya5fHh25J60v/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1a7vkBtfY8rTWvBQ2S_hGxQF3i-3qvjHG/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1wiYiKs64nW0GKQ-U8wAsVK0MOI5j7_MP/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1AdCDT5iHDvXm4Si9JOhbNQtzn7hgW_k-/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/1UaGxIwhXA3nG0yDRfIe_l0IZsVlpHQB3/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 3",
+          "href": "https://drive.google.com/file/d/1U4Zp4jt_eyNuK-BSrX6sxVDe86O28gtE/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 4",
+          "href": "https://drive.google.com/file/d/1eArRfz4EgiyRSic6hUpUST12GJL4PMt9/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1KjFxCuzTa1OuMppgrA56q8zuQv6AH-4r/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://drive.google.com/file/d/1lig4_8zlo1j2d16kNDq4zrlDlouboMv6/view?usp=drive_link",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Contemporary art (1)",
+      "summary": "Постмодернизм, цифровое искусство, новые медиа и расширение понятий современного искусства.",
+      "tags": [
+        "contemporary art",
+        "постмодернизм"
+      ],
+      "searchKeywords": "урок 10 contemporary art постмодернизм новые медиа",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217090&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1yT7wUKRHlbMo9u6CMHzZeJNNcfG5SNdN/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1-95xQ5rKQdQR4FXqozN8XiAO_o-j-imV/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1bnCxwOnTS-vgttp7iUHSZw-VF8bLm3ys/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1j6zzPB0zsd8nqj7qqQMPBQwvlFjlm22z/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1L3tY1CK40lijJjpneDMCm9QaGhWYPxGc/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1GZxoPEI0RNnafpqtJLs8kXXAmOcPGr46/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1KNeH0TfylzJcNkIJlaguQ3NtkMUOAmWD/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/16bcHQ7wAQOQZHf_iHcl7znGcSWjJd3-r/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 3",
+          "href": "https://drive.google.com/file/d/1q-gROMjcXnN8M032FZKpl-gzD-eX_juL/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1zXmHByU3iggOk0vkwkbL1LTyQ7HKvhdu/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://drive.google.com/file/d/1vl_RFtql2297iw4vE_3P2UGKCMBjHfgU/view?usp=drive_link",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Contemporary art (2)",
+      "summary": "Институции, выставочные механизмы, рынок и способы легитимации актуального искусства.",
+      "tags": [
+        "contemporary art",
+        "институции"
+      ],
+      "searchKeywords": "урок 11 contemporary art институции рынок выставки",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217091&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/1b8psae-CuU8J6Vt3QmhfB0kYkG_YEqtm/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/11L-ACrZbGqaVs_Ls7M2ZLQkj6IV6tMYi/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/1a79VanDMpGidQbvgdRYcfGDZNg1eYQG_/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1EuSqINmEOzuHU0TKFse6JfOE04qSHt0U/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1bBCXvpkPWT1K4wSTIP5LegvseEVdQ1uT/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1qg7ABHfCntjVt5eXBdI0gRqVfHaa-4DJ/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1rRiLtTv6-WrXtG3nyfCz-JR5p5F2UUQ9/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/1er7WIRZwp4BO_WMxsXZs9EjXBaSBf26A/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 3",
+          "href": "https://drive.google.com/file/d/1tPkFaGxtVInc_biz7bmSxUPokCMRgECP/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1sIT30VDnnBcvg4PlZ2UhDefC7JZzmijK/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://drive.google.com/file/d/1o9d4YQjTjz0hhMBj2mVanfN9dmZ3anQ_/view?usp=drive_link",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Искусство вне музея",
+      "summary": "Искусство в ландшафте, городской среде и архитектуре; выход из музейного пространства.",
+      "tags": [
+        "public art",
+        "лэнд-арт"
+      ],
+      "searchKeywords": "урок 12 искусство вне музея public art land art architecture",
+      "resources": [
+        {
+          "label": "Лекция",
+          "href": "https://base.oppopart-lessons.ru/pl/teach/control/lesson/view?id=347217092&editMode=0",
+          "featured": false
+        },
+        {
+          "label": "Презентация",
+          "href": "https://drive.google.com/file/d/10JaqX_Sdg8xkWXkDFRw-YjlPasrZovAd/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Конспект",
+          "href": "https://drive.google.com/file/d/1mT2iLkkkj7DkWOcnI0rjcJI3DOaflMVr/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 1",
+          "href": "https://drive.google.com/file/d/16579bMDBzpgTFpr06TW-erbg9OrrcjjT/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб 2",
+          "href": "https://drive.google.com/file/d/1dM3nI4Ivj8j8SOq74byyScSq79pD45C7/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 1",
+          "href": "https://drive.google.com/file/d/1s-liwQB2qvRUuyaHDy91Gscbknnex9A0/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Веб-конспект 2",
+          "href": "https://drive.google.com/file/d/1QtioRnHtOaZmJRm8d6YH_EmVZyau96TE/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 1",
+          "href": "https://drive.google.com/file/d/1Wovl-fZT92Do_xI7pfKRKm6X3aLoCH9i/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 2",
+          "href": "https://drive.google.com/file/d/1sCkIQ3iWmqaADzbZfSldxR8SJOB7PJit/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 3",
+          "href": "https://drive.google.com/file/d/1HXaUIiBItExDs6C7BsT-4lZol3TT7Pns/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "MindMap 4",
+          "href": "https://drive.google.com/file/d/1A_rKaPercDhzsQjZNyLuQENnwWgZ1eck/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "ДЗ",
+          "href": "https://drive.google.com/file/d/1mnb9hXWbuSYP4toSGcAoScbDPrCR9Xdm/view?usp=drive_link",
+          "featured": false
+        },
+        {
+          "label": "Решение 🌟",
+          "href": "https://drive.google.com/file/d/1wIV1zI4aTmdOSpTm2Q_B3jQP7GN6RhHm/view?usp=drive_link",
+          "featured": true
+        }
+      ]
+    }
+  ]
+}
