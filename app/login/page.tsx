@@ -28,7 +28,13 @@ function LoginForm() {
     setLoading(false);
 
     if (!response.ok) {
-      setError('Неверный логин или пароль');
+      if (response.status === 500) {
+        setError(
+          'Сервер не настроен: проверьте AUTH_SECRET и AUTH_USERS в Vercel → Settings → Environment Variables, затем Redeploy.',
+        );
+      } else {
+        setError('Неверный логин или пароль');
+      }
       return;
     }
 
